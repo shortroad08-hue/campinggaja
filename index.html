@@ -97,7 +97,7 @@
     height: 200px;
   }
 
-  /* 예시 안내 */
+  /* 확인 날짜 안내 */
   .notice {
     max-width: 960px;
     margin: 32px auto 0;
@@ -130,11 +130,10 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
   }
   .photo {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 170px;
+    height: 150px;
     font-size: 4rem;
   }
   /* 진짜 사진을 넣으면 카드 칸에 꽉 차게 보여요 */
@@ -142,27 +141,17 @@
   .sea .photo { background: linear-gradient(#bfe3f2, #7bbfdc); }
   .mountain .photo { background: linear-gradient(#cfe6c8, #8fbf86); }
   .value .photo { background: linear-gradient(#ffe3b8, #f6bd73); }
-  .sample {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    padding: 1px 12px;
-    border-radius: 20px;
-    background: #fff;
-    color: var(--orange-dark);
-    font-size: 1rem;
-    font-weight: bold;
-  }
   .info {
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: flex-start;
-    padding: 18px 20px 22px;
+    padding: 18px 20px 14px;
   }
-  .info h3 { margin: 0 0 2px; font-size: 1.3rem; }
+  .info h3 { margin: 0 0 2px; font-size: 1.3rem; line-height: 1.45; }
   .info p { margin: 0 0 14px; }
   .info .place { margin-bottom: 10px; color: var(--text-soft); font-size: 1rem; }
+  .info .price { color: var(--orange-dark); font-size: 1rem; font-weight: bold; }
   .tag {
     margin-top: auto;
     padding: 2px 14px;
@@ -171,6 +160,16 @@
     color: #24552f;
     font-size: 1rem;
   }
+  .more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 8px;
+    color: var(--green);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .more:hover { color: var(--orange-dark); }
 
   footer {
     margin-top: 60px;
@@ -246,45 +245,50 @@
 </header>
 
 <div class="notice-wrap">
-  <p class="notice"><b>지금 보이는 캠핑장은 모두 연습용 예시예요.</b> 진짜 캠핑장 정보가 아니고, 이름이 같은 곳이 있어도 그곳과는 관계없어요. 곧 우리가 고른 캠핑장으로 바꿀게요.</p>
+  <p class="notice"><b>요금은 2026년 11월 5일에 확인했어요.</b> 요금과 운영 내용은 바뀔 수 있으니, 예약 전에 각 캠핑장의 안내 페이지를 꼭 다시 봐 주세요. 주말 요금은 금요일, 토요일, 공휴일 전날에 적용되고, 국립공원 야영장은 7~8월과 10월 1일~11월 15일에도 같은 요금이에요. 카드의 그림은 실제 사진이 아니에요.</p>
 </div>
 
 <main>
 <!--
-  캠핑장을 바꾸는 방법: 아래 article 묶음 하나가 캠핑장 카드 하나예요.
-  진짜 사진을 넣을 때는 이모지 자리를 <img src="사진파일이름.jpg" alt="사진 설명"> 으로 바꾸고,
-  "예시" 표시는 지워 주세요.
+  아래 article 묶음 하나가 캠핑장 카드 하나예요.
+  진짜 사진을 넣을 때는 그림 자리를 <img src="사진파일이름.jpg" alt="사진 설명"> 으로 바꿔요.
 -->
 
 <section id="sea" class="sea">
   <h2><span aria-hidden="true">🌊</span> 바다뷰가 좋은 캠핑장</h2>
-  <p class="sub">텐트 문을 열면 바다가 보여요</p>
+  <p class="sub">바닷가 가까이에서 파도 소리와 함께 쉬어요</p>
   <div class="cards">
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌅</span></div>
+      <div class="photo"><span aria-hidden="true">🌅</span></div>
       <div class="info">
-        <h3>파도소리 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 동해안</p>
-        <p>해 뜨는 모습을 텐트 앞에서 볼 수 있어요.</p>
-        <span class="tag">일출이 멋져요</span>
+        <h3>망상오토캠핑리조트</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 강원 동해시</p>
+        <p>긴 모래사장과 소나무 숲으로 이름난 동해 바닷가에 있어요.</p>
+        <p class="price">요금은 안내 페이지에서 확인해 주세요</p>
+        <span class="tag">동해 바다와 솔숲</span>
+        <a class="more" href="https://www.campingkorea.or.kr/www/fcltyGuidance/fcltyGuidance01/fcltyGuidance01_01.jsp" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🏖️</span></div>
+      <div class="photo"><span aria-hidden="true">🏖️</span></div>
       <div class="info">
-        <h3>모래별 오토캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 서해안</p>
-        <p>해변이 가까워 아이들과 가기 좋아요.</p>
-        <span class="tag">해변 바로 앞</span>
+        <h3>변산반도 고사포 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 전북 부안군</p>
+        <p>약 2km 백사장 옆, 약 300m 길이의 소나무 숲 안에 있어요.</p>
+        <p class="price">자동차야영지 1박: 평일 20,000원, 주말 30,000원</p>
+        <span class="tag">백사장과 솔숲</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?parkId=B18" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">⛵</span></div>
+      <div class="photo"><span aria-hidden="true">⛵</span></div>
       <div class="info">
-        <h3>푸른섬 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 남해안</p>
-        <p>섬이 보이는 잔잔한 바다 풍경이 예뻐요.</p>
-        <span class="tag">노을이 예뻐요</span>
+        <h3>태안해안 학암포 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 충남 태안군</p>
+        <p>약 2km의 넓은 백사장이 있고, 바다가 완만하게 깊어져요.</p>
+        <p class="price">자동차야영지 1박: 평일 20,000원, 주말 30,000원</p>
+        <span class="tag">넓은 백사장</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?prdDvcd=C&amp;parkId=B08&amp;deptId=B081001" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
   </div>
@@ -292,33 +296,39 @@
 
 <section id="mountain" class="mountain">
   <h2><span aria-hidden="true">⛰️</span> 산의 자연경관이 좋은 캠핑장</h2>
-  <p class="sub">숲 향기 속에서 푹 쉬어요</p>
+  <p class="sub">국립공원의 숲과 계곡을 가까이에서 만나요</p>
   <div class="cards">
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌲</span></div>
+      <div class="photo"><span aria-hidden="true">🍁</span></div>
       <div class="info">
-        <h3>솔향기 숲 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 강원도</p>
-        <p>높은 소나무 숲에서 시원하게 쉴 수 있어요.</p>
-        <span class="tag">여름에 시원해요</span>
+        <h3>설악산 설악동 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 강원 속초시</p>
+        <p>설악산 국립공원에 있고, 가을 단풍 캠핑지로 소개되는 곳이에요.</p>
+        <p class="price">자동차야영지 1박: 평일 20,000원, 주말 30,000원</p>
+        <span class="tag">가을 단풍</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?parkId=B03" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🍁</span></div>
+      <div class="photo"><span aria-hidden="true">🌲</span></div>
       <div class="info">
-        <h3>단풍골 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 충청북도</p>
-        <p>가을 단풍이 예쁜 계곡 옆 캠핑장이에요.</p>
-        <span class="tag">가을에 추천해요</span>
+        <h3>지리산 달궁 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 전북 남원시</p>
+        <p>지리산 달궁계곡에 있는 국립공원 야영장이에요.</p>
+        <p class="price">자동차야영지 1박: 평일 20,000원, 주말 30,000원</p>
+        <span class="tag">지리산 계곡</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?prdDvcd=C&amp;parkId=B01&amp;deptId=B012002" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌌</span></div>
+      <div class="photo"><span aria-hidden="true">💦</span></div>
       <div class="info">
-        <h3>별빛 능선 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 경상북도</p>
-        <p>밤하늘 별이 가득 보이는 높은 곳에 있어요.</p>
-        <span class="tag">별 보기 좋아요</span>
+        <h3>소백산 남천 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 충북 단양군</p>
+        <p>소백산 국립공원에 있고, 물놀이 시설이 있어요.</p>
+        <p class="price">일반(대형)야영지 1박: 평일 9,000원, 주말 12,000원</p>
+        <span class="tag">물놀이 시설</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?prdDvcd=C&amp;parkId=B12&amp;deptId=B122001" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
   </div>
@@ -326,33 +336,39 @@
 
 <section id="value" class="value">
   <h2><span aria-hidden="true">💰</span> 가성비가 좋은 캠핑장</h2>
-  <p class="sub">부담 없이, 깨끗하고 친절하게</p>
+  <p class="sub">1박 1만원 안팎으로 부담 없이 다녀와요</p>
   <div class="cards">
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🔥</span></div>
+      <div class="photo"><span aria-hidden="true">⛺</span></div>
       <div class="info">
-        <h3>모닥불 마을 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 경기도</p>
-        <p>가격 부담이 적고 화장실과 샤워실이 깨끗해요.</p>
-        <span class="tag">시설이 깨끗해요</span>
+        <h3>덕유산 덕유대 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 전북 무주군</p>
+        <p>일반 야영지만 434동이나 되는 큰 야영장이에요. 차 한 대 주차료 4,000~5,000원이 따로 있어요.</p>
+        <p class="price">일반(중형)야영지 1박: 평일 6,000원, 주말 9,000원</p>
+        <span class="tag">자리가 많아요</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?parkId=B05" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">⛺</span></div>
+      <div class="photo"><span aria-hidden="true">🚗</span></div>
       <div class="info">
-        <h3>친구들 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 전라북도</p>
-        <p>자리가 넓어서 여럿이 함께 가기 좋아요.</p>
-        <span class="tag">자리가 넓어요</span>
+        <h3>북한산 사기막 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 경기 고양시</p>
+        <p>야영장 안에는 전기차와 수소차만 다닐 수 있어요. 숯과 장작은 쓸 수 없고, 주차료와 전기료는 따로예요.</p>
+        <p class="price">일반(중형)야영지 1박: 평일 6,000원, 주말 9,000원</p>
+        <span class="tag">차 출입 규칙 확인 필요</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?parkId=B14" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
     <article class="card">
-      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🍖</span></div>
+      <div class="photo"><span aria-hidden="true">🔥</span></div>
       <div class="info">
-        <h3>든든 캠핑장</h3>
-        <p class="place"><span aria-hidden="true">📍</span> 충청남도</p>
-        <p>바비큐 시설이 잘 되어 있고 가격도 알뜰해요.</p>
-        <span class="tag">바비큐 하기 좋아요</span>
+        <h3>월출산 천황 야영장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 전남 영암군</p>
+        <p>넓은 나무 데크 자리(가로 5m, 세로 8m)가 있어요. 주차료와 전기료는 따로예요.</p>
+        <p class="price">일반(대형)야영지 1박: 평일 9,000원, 주말 12,000원</p>
+        <span class="tag">넓은 데크 자리</span>
+        <a class="more" href="https://reservation.knps.or.kr/contents/C/serviceGuide.do?parkId=B20" target="_blank" rel="noopener">안내 페이지 보기 (새 창)</a>
       </div>
     </article>
   </div>
