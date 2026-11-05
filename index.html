@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>캠핑가자</title>
+<meta name="description" content="친한 친구들, 가족과 함께 갈 캠핑장을 바다뷰 · 산 경관 · 가성비로 나눠 모았어요.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏕️</text></svg>">
+<style>
+  :root {
+    --green: #2f6b3f;
+    --green-dark: #173a22;
+    --green-light: #e4efe2;
+    --orange: #c2570c;
+    --orange-dark: #a34806;
+    --orange-soft: #fdeedd;
+    --cream: #fbf6ea;
+    --text: #2b2b2b;
+    --text-soft: #5a5a5a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--cream);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a:focus-visible { outline: 3px solid #ffb066; outline-offset: 3px; }
+
+  /* 맨 위 메뉴 */
+  .menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--green-dark);
+  }
+  .menu a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .menu a:hover { background: var(--green); }
+  .menu .home { font-weight: bold; }
+  .menu nav { display: flex; gap: 4px; }
+
+  /* 처음 화면 */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 20px 230px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(170deg, var(--green), #1f4a2b);
+  }
+  .hero h1 { margin: 0 0 10px; font-size: 3rem; line-height: 1.3; }
+  .hero p { margin: 0 0 36px; font-size: 1.2rem; }
+  .buttons {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .buttons a {
+    padding: 16px 28px;
+    border-radius: 40px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform .15s, background .15s;
+  }
+  .buttons a:hover { transform: translateY(-3px); background: var(--orange-dark); }
+  .scene {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 200px;
+  }
+
+  /* 예시 안내 */
+  .notice {
+    max-width: 960px;
+    margin: 32px auto 0;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: var(--orange-soft);
+  }
+  .notice-wrap { padding: 0 16px; }
+
+  /* 캠핑장 목록 */
+  section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px 20px;
+    scroll-margin-top: 56px;
+  }
+  section h2 { margin: 0 0 6px; color: var(--green); font-size: 2rem; line-height: 1.35; }
+  section .sub { margin: 0 0 28px; color: var(--text-soft); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+  }
+  .photo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    font-size: 4rem;
+  }
+  /* 진짜 사진을 넣으면 카드 칸에 꽉 차게 보여요 */
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .sea .photo { background: linear-gradient(#bfe3f2, #7bbfdc); }
+  .mountain .photo { background: linear-gradient(#cfe6c8, #8fbf86); }
+  .value .photo { background: linear-gradient(#ffe3b8, #f6bd73); }
+  .sample {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 1px 12px;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--orange-dark);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    padding: 18px 20px 22px;
+  }
+  .info h3 { margin: 0 0 2px; font-size: 1.3rem; }
+  .info p { margin: 0 0 14px; }
+  .info .place { margin-bottom: 10px; color: var(--text-soft); font-size: 1rem; }
+  .tag {
+    margin-top: auto;
+    padding: 2px 14px;
+    border-radius: 20px;
+    background: var(--green-light);
+    color: #24552f;
+    font-size: 1rem;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding: 28px 20px;
+    background: var(--green-dark);
+    color: #fff;
+    text-align: center;
+  }
+  footer p { margin: 0; }
+
+  /* 휴대폰 화면 */
+  @media (max-width: 600px) {
+    .menu { padding: 4px 8px; gap: 0; }
+    .menu a { padding: 0 7px; font-size: 1rem; }
+    .hero { padding-top: 52px; }
+    .hero h1 { font-size: 2.4rem; }
+    .buttons { flex-direction: column; align-items: stretch; }
+    section { padding-left: 16px; padding-right: 16px; }
+    section h2 { font-size: 1.65rem; }
+  }
+
+  /* 움직임을 줄이도록 설정한 사람을 위해 */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .buttons a { transition: none; }
+    .buttons a:hover { transform: none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<div class="menu">
+  <a class="home" href="#top">캠핑가자</a>
+  <nav aria-label="캠핑장 종류">
+    <a href="#sea">바다</a>
+    <a href="#mountain">산</a>
+    <a href="#value">가성비</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <h1><span aria-hidden="true">🏕️</span> 캠핑가자</h1>
+  <p>친한 친구들과 함께 갈 캠핑장, 같이 골라 봐요</p>
+  <div class="buttons">
+    <a href="#sea"><span aria-hidden="true">🌊</span> 바다뷰 캠핑장</a>
+    <a href="#mountain"><span aria-hidden="true">⛰️</span> 산 경관 캠핑장</a>
+    <a href="#value"><span aria-hidden="true">💰</span> 가성비 캠핑장</a>
+  </div>
+
+  <!-- 숲, 텐트, 모닥불 그림 -->
+  <svg class="scene" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="glow">
+        <stop offset="0" stop-color="#ffb066" stop-opacity=".75"/>
+        <stop offset="1" stop-color="#ffb066" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g fill="#245232">
+      <path d="M40 180 90 60l50 120zM190 180l40-95 40 95zM300 180l55-140 55 140zM440 180l35-80 35 80zM750 180l35-85 35 85zM850 180l55-145 55 145zM990 180l40-100 40 100zM1090 180l50-125 50 125z"/>
+    </g>
+    <g fill="#1b4428">
+      <path d="M-20 190 30 90l50 100zM120 190l45-90 45 90zM250 190l35-70 35 70zM385 190l40-85 40 85zM800 190l40-80 40 80zM930 190l45-95 45 95zM1050 190l40-75 40 75zM1150 190l40-85 40 85z"/>
+    </g>
+    <path fill="#173a22" d="M0 200V172q300-22 600-10t600 6v32z"/>
+    <circle cx="715" cy="150" r="60" fill="url(#glow)"/>
+    <path fill="#f6bd73" d="M540 172 600 92l60 80z"/>
+    <path fill="#e8782a" d="M600 92l60 80h-32z"/>
+    <path fill="#5c3214" d="M600 122l-20 50h40z"/>
+    <path fill="#6b4226" d="M693 170l40-9 3 7-40 9zM737 170l-40-9-3 7 40 9z"/>
+    <path fill="#e8782a" d="M715 124c13 15 20 24 20 34a20 20 0 0 1-40 0c0-10 9-17 12-24 2 5 4 7 6 8 1-6 1-12 2-18z"/>
+    <path fill="#ffd27a" d="M715 145c7 7 10 12 10 17a10 10 0 0 1-20 0c0-6 6-10 10-17z"/>
+  </svg>
+</header>
+
+<div class="notice-wrap">
+  <p class="notice"><b>지금 보이는 캠핑장은 모두 연습용 예시예요.</b> 진짜 캠핑장 정보가 아니고, 이름이 같은 곳이 있어도 그곳과는 관계없어요. 곧 우리가 고른 캠핑장으로 바꿀게요.</p>
+</div>
+
+<main>
+<!--
+  캠핑장을 바꾸는 방법: 아래 article 묶음 하나가 캠핑장 카드 하나예요.
+  진짜 사진을 넣을 때는 이모지 자리를 <img src="사진파일이름.jpg" alt="사진 설명"> 으로 바꾸고,
+  "예시" 표시는 지워 주세요.
+-->
+
+<section id="sea" class="sea">
+  <h2><span aria-hidden="true">🌊</span> 바다뷰가 좋은 캠핑장</h2>
+  <p class="sub">텐트 문을 열면 바다가 보여요</p>
+  <div class="cards">
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌅</span></div>
+      <div class="info">
+        <h3>파도소리 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 동해안</p>
+        <p>해 뜨는 모습을 텐트 앞에서 볼 수 있어요.</p>
+        <span class="tag">일출이 멋져요</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🏖️</span></div>
+      <div class="info">
+        <h3>모래별 오토캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 서해안</p>
+        <p>해변이 가까워 아이들과 가기 좋아요.</p>
+        <span class="tag">해변 바로 앞</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">⛵</span></div>
+      <div class="info">
+        <h3>푸른섬 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 남해안</p>
+        <p>섬이 보이는 잔잔한 바다 풍경이 예뻐요.</p>
+        <span class="tag">노을이 예뻐요</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="mountain" class="mountain">
+  <h2><span aria-hidden="true">⛰️</span> 산의 자연경관이 좋은 캠핑장</h2>
+  <p class="sub">숲 향기 속에서 푹 쉬어요</p>
+  <div class="cards">
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌲</span></div>
+      <div class="info">
+        <h3>솔향기 숲 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 강원도</p>
+        <p>높은 소나무 숲에서 시원하게 쉴 수 있어요.</p>
+        <span class="tag">여름에 시원해요</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🍁</span></div>
+      <div class="info">
+        <h3>단풍골 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 충청북도</p>
+        <p>가을 단풍이 예쁜 계곡 옆 캠핑장이에요.</p>
+        <span class="tag">가을에 추천해요</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🌌</span></div>
+      <div class="info">
+        <h3>별빛 능선 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 경상북도</p>
+        <p>밤하늘 별이 가득 보이는 높은 곳에 있어요.</p>
+        <span class="tag">별 보기 좋아요</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="value" class="value">
+  <h2><span aria-hidden="true">💰</span> 가성비가 좋은 캠핑장</h2>
+  <p class="sub">부담 없이, 깨끗하고 친절하게</p>
+  <div class="cards">
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🔥</span></div>
+      <div class="info">
+        <h3>모닥불 마을 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 경기도</p>
+        <p>가격 부담이 적고 화장실과 샤워실이 깨끗해요.</p>
+        <span class="tag">시설이 깨끗해요</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">⛺</span></div>
+      <div class="info">
+        <h3>친구들 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 전라북도</p>
+        <p>자리가 넓어서 여럿이 함께 가기 좋아요.</p>
+        <span class="tag">자리가 넓어요</span>
+      </div>
+    </article>
+    <article class="card">
+      <div class="photo"><span class="sample">예시</span><span aria-hidden="true">🍖</span></div>
+      <div class="info">
+        <h3>든든 캠핑장</h3>
+        <p class="place"><span aria-hidden="true">📍</span> 충청남도</p>
+        <p>바비큐 시설이 잘 되어 있고 가격도 알뜰해요.</p>
+        <span class="tag">바비큐 하기 좋아요</span>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><span aria-hidden="true">🔥</span> 캠핑가자 · 친구들과 함께 떠나요 <span aria-hidden="true">🔥</span></p>
+</footer>
+
+</body>
+</html>
