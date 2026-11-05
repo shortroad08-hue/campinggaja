@@ -62,7 +62,7 @@
   .hero {
     position: relative;
     overflow: hidden;
-    padding: 40px 20px 150px;
+    padding: 14px 20px 84px;
     text-align: center;
     color: #fff;
     background: #1f4a2b;
@@ -79,18 +79,22 @@
     from { transform: scale(1); }
     to { transform: scale(1.1); }
   }
-  .hero h1 { position: relative; z-index: 1; margin: 0 0 6px; font-size: 2rem; line-height: 1.3; }
-  .hero p { position: relative; z-index: 1; margin: 0 0 20px; font-size: 1.05rem; }
+  .hero h1 { position: relative; z-index: 1; margin: 0; font-size: 1.6rem; line-height: 1.3; }
+  .hero p { position: relative; z-index: 1; margin: 0 0 8px; font-size: 1rem; }
   .buttons {
     position: relative;
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
   .buttons a {
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
     border-radius: 40px;
     background: var(--orange);
     color: #fff;
@@ -106,7 +110,7 @@
     bottom: 0;
     display: block;
     width: 100%;
-    height: 133px;
+    height: 78px;
   }
 
   /* 확인 날짜 안내 */
@@ -227,9 +231,10 @@
   @media (max-width: 600px) {
     .menu { padding: 4px 8px; gap: 0; }
     .menu a { padding: 0 7px; font-size: 1rem; }
-    .hero { padding-top: 28px; padding-bottom: 110px; }
-    .hero h1 { font-size: 1.7rem; }
-    .scene { height: 100px; }
+    .hero { padding-top: 10px; padding-bottom: 66px; }
+    .hero h1 { font-size: 1.5rem; }
+    .hero .buttons { gap: 6px; }
+    .scene { height: 60px; }
     .buttons { flex-direction: column; align-items: stretch; }
     section { padding-left: 16px; padding-right: 16px; }
     section h2 { font-size: 1.65rem; }
@@ -278,53 +283,7 @@
     <rect x="6" y="16" width="38" height="24" fill="#f7e6c4"/>
     <rect x="12" y="22" width="9" height="9" fill="#7bbfdc"/>
     <rect x="29" y="23" width="9" height="17" fill="#8a5a33"/>
-  </symbol>
-
-  <!-- 새로 넣은 캠핑장 카드에 함께 쓰는 풍경 그림 -->
-  <symbol id="art-forest" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#dcefe0"/><path fill="#8fbf86" d="M0 86 90 34l80 40 80-50 150 70v76H0z"/>
-    <use href="#pine" x="6" y="36" width="56" height="112"/><use href="#pine" x="66" y="56" width="44" height="88"/><use href="#pine" x="290" y="46" width="50" height="100"/><use href="#pine" x="346" y="30" width="58" height="116"/>
-    <rect y="136" width="400" height="34" fill="#a9c78f"/>
-    <use href="#tent" x="130" y="108" width="78" height="52" style="color:#e8782a"/><use href="#tent" x="222" y="114" width="60" height="40" style="color:#f6bd73"/>
-  </symbol>
-  <symbol id="art-rock" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#dcecf4"/><path fill="#9aa1a6" d="M0 112 60 62l40 24 54-68 46 50 44-26 50 46 40-34 66 52v64H0z"/><path fill="#c8cdd0" d="M154 18l-22 28 18-6 10 12 10-8zM244 42l-12 14 12-2 8 6 6-4z"/>
-    <path fill="#7fae80" d="M0 124q200-26 400-6v52H0z"/>
-    <use href="#pine" x="8" y="70" width="40" height="80"/><use href="#pine" x="352" y="66" width="42" height="84"/>
-    <use href="#tent" x="146" y="112" width="78" height="52" style="color:#f0a63c"/>
-  </symbol>
-  <symbol id="art-valley" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#dcefe0"/><path fill="#8fbf86" d="M0 90 90 34l80 40 80-50 150 70v76H0z"/><path fill="#5f9c63" d="M0 112q100-40 210-14t190-16v88H0z"/>
-    <path fill="#7bc5e0" d="M214 100c30 16-20 26 10 40s60 12 70 30h-110c-20-20 40-30 10-44s-10-22 20-26z"/>
-    <use href="#pine" x="6" y="44" width="50" height="100"/><use href="#pine" x="340" y="38" width="54" height="108"/>
-    <use href="#tent" x="282" y="110" width="66" height="44" style="color:#e8782a"/><use href="#tent" x="86" y="112" width="60" height="40" style="color:#f6bd73"/>
-  </symbol>
-  <symbol id="art-autumn" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#f6e7cf"/><path fill="#a8947c" d="M0 96 90 44l80 34 80-48 150 66v74H0z"/>
-    <g fill="#d9622b"><circle cx="30" cy="118" r="34"/><circle cx="210" cy="116" r="30"/><circle cx="362" cy="116" r="38"/></g>
-    <g fill="#e8a13a"><circle cx="92" cy="122" r="30"/><circle cx="290" cy="122" r="32"/></g>
-    <rect y="136" width="400" height="34" fill="#a68a58"/>
-    <use href="#tent" x="130" y="112" width="72" height="48" style="color:#2f8f6a"/>
-  </symbol>
-  <symbol id="art-park" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#e4f2f6"/><path fill="#b9d8a6" d="M0 92q200-24 400 0v78H0z"/>
-    <g fill="#5f9c63"><circle cx="50" cy="82" r="30"/><circle cx="346" cy="80" r="34"/></g><path stroke="#6b4226" stroke-width="6" d="M50 100v28M346 100v28"/>
-    <g fill="#f4d35e"><circle cx="110" cy="146" r="5"/><circle cx="140" cy="154" r="5"/><circle cx="260" cy="150" r="5"/><circle cx="300" cy="156" r="5"/></g>
-    <use href="#tent" x="130" y="94" width="78" height="52" style="color:#e8782a"/><use href="#tent" x="222" y="100" width="60" height="40" style="color:#2f8f6a"/>
-  </symbol>
-  <symbol id="art-river" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#e0f0f5"/><path fill="#a9cc9e" d="M0 70q200-30 400 0v30H0z"/>
-    <path fill="#7bc5e0" d="M0 90q200-20 400 0v28q-200-20-400 0z"/><path fill="#b9d8a6" d="M0 118q200-20 400 0v52H0z"/>
-    <use href="#pine" x="8" y="60" width="46" height="92"/><use href="#pine" x="56" y="74" width="38" height="76"/><use href="#pine" x="348" y="58" width="48" height="96"/>
-    <use href="#tent" x="146" y="106" width="78" height="52" style="color:#f0a63c"/><use href="#tent" x="240" y="112" width="60" height="40" style="color:#e8782a"/>
-  </symbol>
-  <symbol id="art-lake" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#e0f0f5"/><path fill="#8fbf86" d="M0 66q100-36 200-10t200-14v50H0z"/>
-    <ellipse cx="290" cy="104" rx="130" ry="24" fill="#7bc5e0"/><path fill="#b9d8a6" d="M0 118q200-14 400 6v46H0z"/>
-    <path stroke="#e8782a" stroke-width="5" fill="none" d="M40 142v-30h40v30M40 112l20-16 20 16"/>
-    <use href="#tent" x="130" y="108" width="78" height="52" style="color:#e8782a"/><use href="#tent" x="240" y="118" width="60" height="40" style="color:#2f8f6a"/>
-  </symbol>
-</svg>
+  </symbol></svg>
 
 <div class="menu">
   <a class="home" href="#top">캠핑가자</a>
@@ -338,19 +297,22 @@
 <header class="hero">
   <!-- 숲, 텐트, 모닥불 배경 그림 -->
   <div class="hero-bg">
-  <svg class="scene"viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <svg class="scene" viewBox="-1200 85 3600 115" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
       <radialGradient id="glow">
         <stop offset="0" stop-color="#ffb066" stop-opacity=".75"/>
         <stop offset="1" stop-color="#ffb066" stop-opacity="0"/>
       </radialGradient>
     </defs>
-    <g fill="#245232">
+    <g id="ridge"><g fill="#245232">
       <path d="M40 180 90 60l50 120zM190 180l40-95 40 95zM300 180l55-140 55 140zM440 180l35-80 35 80zM750 180l35-85 35 85zM850 180l55-145 55 145zM990 180l40-100 40 100zM1090 180l50-125 50 125z"/>
     </g>
     <g fill="#1b4428">
       <path d="M-20 190 30 90l50 100zM120 190l45-90 45 90zM250 190l35-70 35 70zM385 190l40-85 40 85zM800 190l40-80 40 80zM930 190l45-95 45 95zM1050 190l40-75 40 75zM1150 190l40-85 40 85z"/>
     </g>
+    </g>
+    <use href="#ridge" x="-1200"/><use href="#ridge" x="1200"/>
+    <rect x="-1200" y="170" width="3600" height="30" fill="#173a22"/>
     <path fill="#173a22" d="M0 200V172q300-22 600-10t600 6v32z"/>
     <circle cx="715" cy="150" r="60" fill="url(#glow)"/>
     <path fill="#f6bd73" d="M540 172 600 92l60 80z"/>
@@ -372,7 +334,7 @@
 </header>
 
 <div class="notice-wrap">
-  <p class="notice"><b>요금은 2026년 11월 5일에 확인했어요.</b> 요금과 운영 내용은 바뀔 수 있으니, 예약 전에 각 캠핑장의 안내 페이지를 꼭 다시 봐 주세요. 주말 요금은 금요일, 토요일, 공휴일 전날에 적용되고, 국립공원 야영장은 7~8월과 10월 1일~11월 15일에도 같은 요금이에요. 국립공원, 울주군, 부산시 안내 페이지로 연결되지 않는 카드는 한국관광공사 고캠핑에 등록된 내용이라 실제 요금과 다를 수 있어요. 성수기에는 요금이 더 비쌀 수 있어요. 바다 칸의 사진은 분위기를 보여 주는 참고 사진이고, 산과 가성비 칸의 그림은 캠핑장 특징을 살려 그린 것이에요. 모두 그 캠핑장의 실제 모습이 아니에요. 실제 모습은 카드의 링크에서 볼 수 있어요.</p>
+  <p class="notice"><b>요금은 2026년 11월 5일에 확인했어요.</b> 요금과 운영 내용은 바뀔 수 있으니, 예약 전에 각 캠핑장의 안내 페이지를 꼭 다시 봐 주세요. 주말 요금은 금요일, 토요일, 공휴일 전날에 적용되고, 국립공원 야영장은 7~8월과 10월 1일~11월 15일에도 같은 요금이에요. 국립공원, 울주군, 부산시 안내 페이지로 연결되지 않는 카드는 한국관광공사 고캠핑에 등록된 내용이라 실제 요금과 다를 수 있어요. 성수기에는 요금이 더 비쌀 수 있어요. 카드 사진은 분위기를 보여 주는 참고 사진이고, 북한산 사기막 카드만 특징을 살린 그림이에요. 모두 그 캠핑장의 실제 모습이 아니에요. 실제 모습은 카드의 링크에서 볼 수 있어요.</p>
 </div>
 
 <div class="regions" id="regions" hidden>
@@ -590,18 +552,10 @@
 
 <section id="mountain" class="mountain">
   <h2><span aria-hidden="true">⛰️</span> 산의 자연경관이 좋은 캠핑장</h2>
-  <p class="sub">산과 숲, 계곡을 가까이에서 만나요</p>
+  <p class="sub">산과 숲, 계곡을 가까이에서 만나요. 카드 사진은 단풍 분위기를 보여 주는 참고 사진이고, 그 캠핑장에서 찍은 사진이 아니에요.</p>
   <div class="cards">
     <article class="card" data-region="강원">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="뾰족한 바위 산과 붉은 단풍 숲 아래의 텐트 그림">
-        <rect width="400" height="170" fill="#d9ecf5"/>
-        <path fill="#8d939a" d="M0 120 50 60l30 26 44-66 40 48 36-30 50 56 42-40 36 34 62-30v110H0z"/>
-        <path fill="#c4c8cc" d="M124 20l-20 30 18-8 12 14 9-8zM300 54l-16 16 14-3 10 8 8-5z"/>
-        <g fill="#d9622b"><circle cx="30" cy="124" r="32"/><circle cx="210" cy="124" r="30"/><circle cx="360" cy="120" r="38"/></g>
-        <g fill="#e8a13a"><circle cx="90" cy="128" r="30"/><circle cx="150" cy="124" r="26"/><circle cx="290" cy="126" r="34"/></g>
-        <rect y="136" width="400" height="34" fill="#a68a58"/>
-        <use href="#tent" x="110" y="112" width="66" height="44" style="color:#2f8f6a"/><use href="#tent" x="218" y="118" width="54" height="36" style="color:#fbf6ea"/>
-      </svg></div>
+      <div class="photo"><img src="images/autumn1.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>설악산 설악동 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 강원 속초시</p>
@@ -612,14 +566,7 @@
       </div>
     </article>
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="지리산 숲 사이로 흐르는 계곡과 그 옆의 텐트 그림">
-        <rect width="400" height="170" fill="#dcefe0"/>
-        <path fill="#8fbf86" d="M0 90 90 34l80 40 80-50 150 70v76H0z"/><path fill="#5f9c63" d="M0 112q100-40 210-14t190-16v88H0z"/>
-        <use href="#pine" x="6" y="44" width="50" height="100"/><use href="#pine" x="60" y="62" width="40" height="80"/><use href="#pine" x="340" y="38" width="54" height="108"/>
-        <path fill="#7bc5e0" d="M214 100c30 16-20 26 10 40s60 12 70 30h-110c-20-20 40-30 10-44s-10-22 20-26z"/>
-        <path stroke="#e4f6fc" stroke-width="2.5" fill="none" d="M222 124q10 6 2 12M238 152q14 4 22 12"/>
-        <use href="#tent" x="280" y="108" width="66" height="44" style="color:#e8782a"/><use href="#tent" x="102" y="112" width="60" height="40" style="color:#f6bd73"/>
-      </svg></div>
+      <div class="photo"><img src="images/autumn2.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>지리산 달궁 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 남원시</p>
@@ -630,15 +577,7 @@
       </div>
     </article>
     <article class="card" data-region="충북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="소백산 자락의 물놀이 시설과 작은 집, 텐트 그림">
-        <rect width="400" height="170" fill="#d9eff2"/>
-        <path fill="#7fae80" d="M0 92Q80 28 180 66T400 50v120H0z"/><path fill="#a9cc9e" d="M0 124q130-26 400-14v60H0z"/>
-        <use href="#pine" x="6" y="52" width="44" height="88"/><use href="#pine" x="352" y="46" width="46" height="92"/>
-        <rect x="136" y="116" width="150" height="42" rx="20" fill="#fffdf6"/><rect x="144" y="122" width="134" height="30" rx="15" fill="#6cc3e4"/>
-        <path stroke="#e4f6fc" stroke-width="2.5" fill="none" d="M162 134q8-5 16 0t16 0M216 142q8-5 16 0t16 0"/>
-        <circle cx="240" cy="130" r="7" fill="none" stroke="#e8782a" stroke-width="4"/>
-        <use href="#house" x="46" y="94" width="72" height="58"/><use href="#tent" x="298" y="118" width="60" height="40" style="color:#f0a63c"/>
-      </svg></div>
+      <div class="photo"><img src="images/autumn3.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>소백산 남천 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충북 단양군</p>
@@ -649,7 +588,7 @@
       </div>
     </article>
     <article class="card" data-region="서울">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="북한산 바위 봉우리 아래 텐트 그림"><use href="#art-rock"/></svg></div>
+      <div class="photo"><img src="images/autumn4.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>우이동 가족캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 서울 강북구</p>
@@ -660,7 +599,7 @@
       </div>
     </article>
     <article class="card" data-region="서울">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="산자락 숲 옆의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn5.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>천왕산 가족캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 서울 구로구</p>
@@ -671,7 +610,7 @@
       </div>
     </article>
     <article class="card" data-region="대구">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="팔공산 숲 아래 오토캠핑 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn6.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>도학야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대구 동구</p>
@@ -682,7 +621,7 @@
       </div>
     </article>
     <article class="card" data-region="대구">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="비슬산 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn1.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>비슬산 숲속 오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대구 달성군</p>
@@ -693,7 +632,7 @@
       </div>
     </article>
     <article class="card" data-region="인천">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="강화도 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn2.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>함허동천야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 인천 강화군</p>
@@ -704,7 +643,7 @@
       </div>
     </article>
     <article class="card" data-region="전남광주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="백양사 근처 숲속의 텐트와 카라반 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn3.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>내장산 가인 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전남광주 장성군</p>
@@ -715,7 +654,7 @@
       </div>
     </article>
     <article class="card" data-region="전남광주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="무등산 아래 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn4.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>무등산 도원 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전남광주 화순군</p>
@@ -726,7 +665,7 @@
       </div>
     </article>
     <article class="card" data-region="대전">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="키 큰 나무 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn5.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>장태산자연휴양림 캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대전 서구</p>
@@ -737,7 +676,7 @@
       </div>
     </article>
     <article class="card" data-region="대전">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="계족산 아래 오토캠핑 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn6.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>산디마을 생태공원 오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대전 대덕구</p>
@@ -748,7 +687,7 @@
       </div>
     </article>
     <article class="card" data-region="울산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="산과 계곡 옆의 텐트 그림"><use href="#art-valley"/></svg></div>
+      <div class="photo"><img src="images/autumn1.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>작천정별빛야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 울산 울주군</p>
@@ -759,7 +698,7 @@
       </div>
     </article>
     <article class="card" data-region="울산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="영남알프스 봉우리 아래 텐트 그림"><use href="#art-rock"/></svg></div>
+      <div class="photo"><img src="images/autumn2.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>등억알프스야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 울산 울주군</p>
@@ -770,7 +709,7 @@
       </div>
     </article>
     <article class="card" data-region="세종">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="전월산 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn3.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>전월산 국민여가캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 세종 세종동</p>
@@ -781,7 +720,7 @@
       </div>
     </article>
     <article class="card" data-region="경기">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="도덕산 숲 옆의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn4.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>광명도덕산캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경기 광명시</p>
@@ -792,7 +731,7 @@
       </div>
     </article>
     <article class="card" data-region="강원">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="소금강 계곡 옆의 텐트 그림"><use href="#art-valley"/></svg></div>
+      <div class="photo"><img src="images/autumn5.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>오대산 소금강산 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 강원 강릉시</p>
@@ -803,7 +742,7 @@
       </div>
     </article>
     <article class="card" data-region="강원">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="치악산 숲 아래 텐트와 카라반 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn6.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>치악산 구룡 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 강원 원주시</p>
@@ -814,7 +753,7 @@
       </div>
     </article>
     <article class="card" data-region="충북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="월악산 숲 아래 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn1.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>월악산 닷돈재1 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충북 제천시</p>
@@ -825,7 +764,7 @@
       </div>
     </article>
     <article class="card" data-region="충남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="계룡산 숲 아래 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn2.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>계룡산 갑사 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충남 공주시</p>
@@ -836,7 +775,7 @@
       </div>
     </article>
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="단풍 든 내장산 아래 텐트 그림"><use href="#art-autumn"/></svg></div>
+      <div class="photo"><img src="images/autumn3.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>내장산 내장 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 정읍시</p>
@@ -847,7 +786,7 @@
       </div>
     </article>
     <article class="card" data-region="경북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="주왕산 바위 봉우리 아래 텐트 그림"><use href="#art-rock"/></svg></div>
+      <div class="photo"><img src="images/autumn4.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>주왕산 상의 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경북 청송군</p>
@@ -858,7 +797,7 @@
       </div>
     </article>
     <article class="card" data-region="경북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="가야산 숲 아래 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn5.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>가야산 백운동 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경북 성주군</p>
@@ -869,7 +808,7 @@
       </div>
     </article>
     <article class="card" data-region="경남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="지리산 계곡 옆의 텐트 그림"><use href="#art-valley"/></svg></div>
+      <div class="photo"><img src="images/autumn6.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>지리산 내원 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경남 산청군</p>
@@ -880,7 +819,7 @@
       </div>
     </article>
     <article class="card" data-region="제주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="한라산 삼나무 숲속 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/autumn1.jpg" alt="단풍이 곱게 든 산의 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>한라산 관음사지구 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 제주 제주시</p>
@@ -895,16 +834,10 @@
 
 <section id="value" class="value">
   <h2><span aria-hidden="true">💰</span> 가성비가 좋은 캠핑장</h2>
-  <p class="sub">1박 요금이 비교적 부담 없는 곳을 모았어요</p>
+  <p class="sub">1박 요금이 비교적 부담 없는 곳을 모았어요. 카드 사진은 불멍 분위기를 보여 주는 참고 사진이고, 그 캠핑장에서 찍은 사진이 아니에요. 불을 피울 수 있는지, 화로대가 필요한지는 캠핑장마다 다르니 꼭 확인해 주세요.</p>
   <div class="cards">
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="덕유산 숲 앞 흙바닥 야영지에 여러 텐트가 줄지어 있는 그림">
-        <rect width="400" height="170" fill="#e2f0dc"/><path fill="#8fbf86" d="M0 66 110 22l90 36 90-30 110 40v50H0z"/>
-        <g><use href="#pine" x="0" y="36" width="34" height="68"/><use href="#pine" x="44" y="42" width="30" height="60"/><use href="#pine" x="88" y="36" width="34" height="68"/><use href="#pine" x="136" y="44" width="28" height="56"/><use href="#pine" x="178" y="38" width="32" height="64"/><use href="#pine" x="224" y="44" width="28" height="56"/><use href="#pine" x="266" y="36" width="34" height="68"/><use href="#pine" x="312" y="42" width="30" height="60"/><use href="#pine" x="358" y="36" width="34" height="68"/></g>
-        <rect y="92" width="400" height="78" fill="#d9c39a"/>
-        <use href="#tent" x="24" y="96" width="42" height="28" style="color:#e8782a"/><use href="#tent" x="98" y="96" width="42" height="28" style="color:#2f8f6a"/><use href="#tent" x="172" y="96" width="42" height="28" style="color:#f6bd73"/><use href="#tent" x="246" y="96" width="42" height="28" style="color:#c2570c"/><use href="#tent" x="320" y="96" width="42" height="28" style="color:#2f8f6a"/>
-        <use href="#tent" x="58" y="130" width="48" height="32" style="color:#f0a63c"/><use href="#tent" x="136" y="130" width="48" height="32" style="color:#e8782a"/><use href="#tent" x="214" y="130" width="48" height="32" style="color:#fbf6ea"/><use href="#tent" x="292" y="130" width="48" height="32" style="color:#f6bd73"/>
-      </svg></div>
+      <div class="photo"><img src="images/campfire1.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy" style="object-position:center bottom"></div>
       <div class="info">
         <h3>덕유산 덕유대 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 무주군</p>
@@ -934,14 +867,7 @@
       </div>
     </article>
     <article class="card" data-region="전남광주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="월출산의 울퉁불퉁한 바위 봉우리 아래 나무 데크 위 텐트 그림">
-        <rect width="400" height="170" fill="#fbe6cc"/><circle cx="330" cy="36" r="18" fill="#fff5d6"/>
-        <path fill="#837d8c" d="M0 100l26-34 18 14 22-44 20 24 18-34 22 32 20-16 26 42 24-22 22 30 28-40 22 26 24-32 24 36 28-20 36 40v68H0z"/>
-        <path fill="#6f9f6b" d="M0 116q200-24 400-4v58H0z"/>
-        <use href="#pine" x="6" y="76" width="36" height="72"/><use href="#pine" x="358" y="70" width="38" height="76"/>
-        <path fill="#b57c44" d="M92 142h220l18 20H74z"/><path stroke="#8a5a33" stroke-width="2" d="M80 156h244M86 149h232M132 142l-12 20M180 142l-6 20M228 142l6 20M276 142l12 20"/>
-        <use href="#tent" x="150" y="92" width="96" height="62" style="color:#f0a63c"/>
-      </svg></div>
+      <div class="photo"><img src="images/campfire2.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>월출산 천황 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전남광주 영암군</p>
@@ -952,7 +878,7 @@
       </div>
     </article>
     <article class="card" data-region="서울">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="노을 지는 도심 공원의 텐트 그림"><use href="#art-park"/></svg></div>
+      <div class="photo"><img src="images/campfire3.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>노을공원 가족캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 서울 마포구</p>
@@ -963,7 +889,7 @@
       </div>
     </article>
     <article class="card" data-region="부산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="넓은 생태공원의 유채꽃과 텐트 그림"><use href="#art-park"/></svg></div>
+      <div class="photo"><img src="images/campfire4.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>대저생태공원캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 부산 강서구</p>
@@ -974,7 +900,7 @@
       </div>
     </article>
     <article class="card" data-region="대구">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="공원과 물놀이장 옆의 텐트 그림"><use href="#art-park"/></svg></div>
+      <div class="photo"><img src="images/campfire1.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy" style="object-position:center bottom"></div>
       <div class="info">
         <h3>달서별빛캠프 캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대구 달서구</p>
@@ -985,7 +911,7 @@
       </div>
     </article>
     <article class="card" data-region="대전">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="산림욕장 숲 옆의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/campfire2.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>상소오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 대전 동구</p>
@@ -996,7 +922,7 @@
       </div>
     </article>
     <article class="card" data-region="세종">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="강 옆의 공원에 있는 텐트 그림"><use href="#art-river"/></svg></div>
+      <div class="photo"><img src="images/campfire3.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>세종 합강캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 세종 세종동</p>
@@ -1007,7 +933,7 @@
       </div>
     </article>
     <article class="card" data-region="세종">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="나무 옆의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/campfire4.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>풍성채</h3>
         <p class="place"><span aria-hidden="true">📍</span> 세종 전동면</p>
@@ -1018,7 +944,7 @@
       </div>
     </article>
     <article class="card" data-region="경기">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="넓은 공원에 있는 텐트 그림"><use href="#art-park"/></svg></div>
+      <div class="photo"><img src="images/campfire1.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy" style="object-position:center bottom"></div>
       <div class="info">
         <h3>평화누리캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경기 파주시</p>
@@ -1029,7 +955,7 @@
       </div>
     </article>
     <article class="card" data-region="경기">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="생태공원 나무 옆의 텐트 그림"><use href="#art-park"/></svg></div>
+      <div class="photo"><img src="images/campfire2.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>초막골생태공원 느티나무야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경기 군포시</p>
@@ -1040,7 +966,7 @@
       </div>
     </article>
     <article class="card" data-region="충북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="강변 소나무 숲속 텐트 그림"><use href="#art-river"/></svg></div>
+      <div class="photo"><img src="images/campfire3.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>송호관광지</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충북 영동군</p>
@@ -1051,7 +977,7 @@
       </div>
     </article>
     <article class="card" data-region="충북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="강변 솔밭의 텐트 그림"><use href="#art-river"/></svg></div>
+      <div class="photo"><img src="images/campfire4.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>충주 목계솔밭 캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충북 충주시</p>
@@ -1062,7 +988,7 @@
       </div>
     </article>
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="호수 옆의 텐트와 놀이 시설 그림"><use href="#art-lake"/></svg></div>
+      <div class="photo"><img src="images/campfire1.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy" style="object-position:center bottom"></div>
       <div class="info">
         <h3>정읍시 국민여가캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 정읍시</p>
@@ -1073,7 +999,7 @@
       </div>
     </article>
     <article class="card" data-region="제주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="제주 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/campfire2.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>교래자연휴양림야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 제주 제주시</p>
@@ -1084,7 +1010,7 @@
       </div>
     </article>
     <article class="card" data-region="제주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="한라산 동쪽 숲속의 텐트 그림"><use href="#art-forest"/></svg></div>
+      <div class="photo"><img src="images/campfire3.jpg" alt="모닥불을 피워 놓고 쉬는 캠핑 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>붉은오름 자연휴양림 숲속 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 제주 서귀포시</p>
@@ -1102,6 +1028,8 @@
   <p><span aria-hidden="true">🔥</span> 캠핑가자 · 친구들과 함께 떠나요 <span aria-hidden="true">🔥</span></p>
   <p class="source">국립공원 야영장 정보 출처: <a href="https://reservation.knps.or.kr/contents/copyrightPolicy.do" target="_blank" rel="noopener">국립공원공단 예약시스템 (저작권 정책)</a> · 그 밖의 캠핑장 정보 출처: <a href="https://www.gocamping.or.kr/" target="_blank" rel="noopener">한국관광공사 고캠핑</a></p>
   <p class="source">바다 칸 사진(크기 줄임): Clementina, <a href="https://commons.wikimedia.org/wiki/File:Full-orbed_sunrise_over_East_Sea_in_South_Korea.JPG" target="_blank" rel="noopener">사진 1</a> · <a href="https://commons.wikimedia.org/wiki/File:September_East_Sea_sunrise.JPG" target="_blank" rel="noopener">사진 2</a> · <a href="https://commons.wikimedia.org/wiki/File:Sunrise_over_East_Sea_with_table_and_bench.JPG" target="_blank" rel="noopener">사진 3</a> · <a href="https://commons.wikimedia.org/wiki/File:Sunrise_over_vast_sea.JPG" target="_blank" rel="noopener">사진 4</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>) / Seongrae Kim, <a href="https://commons.wikimedia.org/wiki/File:%EC%86%8D%EC%B4%88_16%EB%85%84_%EC%9D%BC%EC%B6%9C_-_panoramio.jpg" target="_blank" rel="noopener">사진 5</a> · <a href="https://commons.wikimedia.org/wiki/File:%EC%86%8D%EC%B4%88_16%EB%85%84_%EC%9D%BC%EC%B6%9C_-_panoramio_(2).jpg" target="_blank" rel="noopener">사진 6</a> (<a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>) / 노을: Steve46814, <a href="https://commons.wikimedia.org/wiki/File:Korea-Hongdo-sunset_11-02722.JPG" target="_blank" rel="noopener">사진 7</a> · <a href="https://commons.wikimedia.org/wiki/File:Korea-Hongdo-sunset_11-02737.JPG" target="_blank" rel="noopener">사진 8</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>) / Mathew Schwartz, <a href="https://commons.wikimedia.org/wiki/File:Sunset_Over_Yellow_Sea_(192015991).jpeg" target="_blank" rel="noopener">사진 9</a> · <a href="https://commons.wikimedia.org/wiki/File:Flying_Home_For_The_Night_(191807175).jpeg" target="_blank" rel="noopener">사진 10</a> (<a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>)</p>
+  <p class="source">산 칸 사진(크기 줄임): Joycekim77, <a href="https://commons.wikimedia.org/wiki/File:Seoraksan_in_the_Fall_1-_%EC%84%A4%EC%95%85%EC%82%B0_%EB%8B%A8%ED%92%8D.jpg" target="_blank" rel="noopener">사진 11</a> · <a href="https://commons.wikimedia.org/wiki/File:Seoraksan_in_the_Fall_2-_%EC%84%A4%EC%95%85%EC%82%B0_%EB%8B%A8%ED%92%8D.jpg" target="_blank" rel="noopener">사진 12</a> · <a href="https://commons.wikimedia.org/wiki/File:Seoraksan_in_the_Fall_3-_%EC%84%A4%EC%95%85%EC%82%B0_%EB%8B%A8%ED%92%8D.jpg" target="_blank" rel="noopener">사진 13</a> / Sohyeon Bak, <a href="https://commons.wikimedia.org/wiki/File:Autumn_in_Chiak_Mountain.jpg" target="_blank" rel="noopener">사진 14</a> / Tung Thanh Dang, <a href="https://commons.wikimedia.org/wiki/File:Naejangsan_Pavilion_2.jpg" target="_blank" rel="noopener">사진 15</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>) / Eirien, <a href="https://commons.wikimedia.org/wiki/File:Beautiful_Foliage_In_South_Korea_(187194125).jpeg" target="_blank" rel="noopener">사진 16</a> (<a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>)</p>
+  <p class="source">가성비 칸 사진(크기 줄임): Steve Redman (미국 국립공원관리청), <a href="https://commons.wikimedia.org/wiki/File:Campfire_and_tent._(87dd09819ec94a8f930251cc31e2eef9).JPG" target="_blank" rel="noopener">사진 17</a> (퍼블릭 도메인) / Marc-Lautenbacher, <a href="https://commons.wikimedia.org/wiki/File:Campfire_flames_at_night.jpg" target="_blank" rel="noopener">사진 18</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>) / 미국 산림청 알래스카 지역, <a href="https://commons.wikimedia.org/wiki/File:20240808-FS-CRD-campfire-0002_(54091275599).jpg" target="_blank" rel="noopener">사진 19</a> (퍼블릭 도메인) / 미국 국립공원관리청, <a href="https://commons.wikimedia.org/wiki/File:Campfire_in_Greenbelt_Park_(b1607593-79fa-4c2f-b3f3-64793069a6b5).jpg" target="_blank" rel="noopener">사진 20</a> (퍼블릭 도메인)</p>
 </footer>
 
 <script>
