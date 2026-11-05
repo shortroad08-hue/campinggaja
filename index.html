@@ -62,7 +62,7 @@
   .hero {
     position: relative;
     overflow: hidden;
-    padding: 72px 20px 230px;
+    padding: 40px 20px 150px;
     text-align: center;
     color: #fff;
     background: #1f4a2b;
@@ -79,22 +79,22 @@
     from { transform: scale(1); }
     to { transform: scale(1.1); }
   }
-  .hero h1 { position: relative; z-index: 1; margin: 0 0 10px; font-size: 3rem; line-height: 1.3; }
-  .hero p { position: relative; z-index: 1; margin: 0 0 36px; font-size: 1.2rem; }
+  .hero h1 { position: relative; z-index: 1; margin: 0 0 6px; font-size: 2rem; line-height: 1.3; }
+  .hero p { position: relative; z-index: 1; margin: 0 0 20px; font-size: 1.05rem; }
   .buttons {
     position: relative;
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
   }
   .buttons a {
-    padding: 16px 28px;
+    padding: 10px 20px;
     border-radius: 40px;
     background: var(--orange);
     color: #fff;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     transition: transform .35s ease, background .35s ease;
@@ -106,7 +106,7 @@
     bottom: 0;
     display: block;
     width: 100%;
-    height: 200px;
+    height: 133px;
   }
 
   /* 확인 날짜 안내 */
@@ -227,8 +227,9 @@
   @media (max-width: 600px) {
     .menu { padding: 4px 8px; gap: 0; }
     .menu a { padding: 0 7px; font-size: 1rem; }
-    .hero { padding-top: 52px; }
-    .hero h1 { font-size: 2.4rem; }
+    .hero { padding-top: 28px; padding-bottom: 110px; }
+    .hero h1 { font-size: 1.7rem; }
+    .scene { height: 100px; }
     .buttons { flex-direction: column; align-items: stretch; }
     section { padding-left: 16px; padding-right: 16px; }
     section h2 { font-size: 1.65rem; }
@@ -280,32 +281,6 @@
   </symbol>
 
   <!-- 새로 넣은 캠핑장 카드에 함께 쓰는 풍경 그림 -->
-  <symbol id="art-beach" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#d5eef8"/><rect y="46" width="400" height="52" fill="#5ea9cc"/>
-    <path stroke="#d7f0fa" stroke-width="3" fill="none" d="M170 66h60M270 78h70M120 86h70"/>
-    <path fill="#f2ddb0" d="M0 104q200-22 400-4v70H0z"/>
-    <use href="#pine" x="-4" y="30" width="56" height="112"/><use href="#pine" x="44" y="50" width="46" height="92"/>
-    <use href="#tent" x="150" y="108" width="72" height="48" style="color:#e8782a"/><use href="#tent" x="250" y="114" width="60" height="40" style="color:#2f8f6a"/>
-  </symbol>
-  <symbol id="art-sunrise" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#fbdcb4"/><circle cx="200" cy="66" r="28" fill="#f7a64a"/>
-    <rect y="66" width="400" height="48" fill="#5ea9cc"/><path stroke="#ffe3bd" stroke-width="3" fill="none" d="M170 78h60M150 92h100"/>
-    <path fill="#f2ddb0" d="M0 116q200-16 400 0v54H0z"/>
-    <use href="#tent" x="92" y="112" width="72" height="48" style="color:#e8782a"/><use href="#tent" x="240" y="112" width="72" height="48" style="color:#f6bd73"/>
-  </symbol>
-  <symbol id="art-sunset" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#f8c79a"/><circle cx="110" cy="72" r="28" fill="#e8782a"/>
-    <rect y="74" width="400" height="42" fill="#b9856d"/><path stroke="#ffd9a8" stroke-width="3" fill="none" d="M80 86h60M60 102h100"/>
-    <path fill="#e9cfa0" d="M0 116q200-14 400 0v54H0z"/>
-    <use href="#tent" x="190" y="110" width="78" height="52" style="color:#f6bd73"/><use href="#tent" x="292" y="116" width="60" height="40" style="color:#2f8f6a"/>
-  </symbol>
-  <symbol id="art-port" viewBox="0 0 400 170">
-    <rect width="400" height="170" fill="#d5e7f2"/><rect y="74" width="400" height="44" fill="#5a9cc0"/>
-    <path fill="none" stroke="#8d939a" stroke-width="5" d="M0 44q100 28 200 0t200 0"/><path stroke="#8d939a" stroke-width="5" d="M100 56v22M300 56v22"/>
-    <rect x="238" y="62" width="92" height="20" rx="4" fill="#fffdf6"/><rect x="256" y="52" width="48" height="12" fill="#e8eef2"/>
-    <rect y="116" width="400" height="54" fill="#b8b4a8"/>
-    <use href="#tent" x="60" y="110" width="78" height="52" style="color:#e8782a"/><use href="#tent" x="170" y="114" width="66" height="44" style="color:#f0a63c"/>
-  </symbol>
   <symbol id="art-forest" viewBox="0 0 400 170">
     <rect width="400" height="170" fill="#dcefe0"/><path fill="#8fbf86" d="M0 86 90 34l80 40 80-50 150 70v76H0z"/>
     <use href="#pine" x="6" y="36" width="56" height="112"/><use href="#pine" x="66" y="56" width="44" height="88"/><use href="#pine" x="290" y="46" width="50" height="100"/><use href="#pine" x="346" y="30" width="58" height="116"/>
@@ -397,7 +372,7 @@
 </header>
 
 <div class="notice-wrap">
-  <p class="notice"><b>요금은 2026년 11월 5일에 확인했어요.</b> 요금과 운영 내용은 바뀔 수 있으니, 예약 전에 각 캠핑장의 안내 페이지를 꼭 다시 봐 주세요. 주말 요금은 금요일, 토요일, 공휴일 전날에 적용되고, 국립공원 야영장은 7~8월과 10월 1일~11월 15일에도 같은 요금이에요. 국립공원, 울주군, 부산시 안내 페이지로 연결되지 않는 카드는 한국관광공사 고캠핑에 등록된 내용이라 실제 요금과 다를 수 있어요. 성수기에는 요금이 더 비쌀 수 있어요. 카드의 그림은 캠핑장 특징을 살려 그린 것이고 실제 사진이 아니에요. 실제 모습은 카드의 링크에서 볼 수 있어요.</p>
+  <p class="notice"><b>요금은 2026년 11월 5일에 확인했어요.</b> 요금과 운영 내용은 바뀔 수 있으니, 예약 전에 각 캠핑장의 안내 페이지를 꼭 다시 봐 주세요. 주말 요금은 금요일, 토요일, 공휴일 전날에 적용되고, 국립공원 야영장은 7~8월과 10월 1일~11월 15일에도 같은 요금이에요. 국립공원, 울주군, 부산시 안내 페이지로 연결되지 않는 카드는 한국관광공사 고캠핑에 등록된 내용이라 실제 요금과 다를 수 있어요. 성수기에는 요금이 더 비쌀 수 있어요. 바다 칸의 사진은 분위기를 보여 주는 참고 사진이고, 산과 가성비 칸의 그림은 캠핑장 특징을 살려 그린 것이에요. 모두 그 캠핑장의 실제 모습이 아니에요. 실제 모습은 카드의 링크에서 볼 수 있어요.</p>
 </div>
 
 <div class="regions" id="regions" hidden>
@@ -432,16 +407,10 @@
 
 <section id="sea" class="sea">
   <h2><span aria-hidden="true">🌊</span> 바다뷰가 좋은 캠핑장</h2>
-  <p class="sub">바닷가 가까이에서 파도 소리와 함께 쉬어요</p>
+  <p class="sub">바닷가 가까이에서 파도 소리와 함께 쉬어요. 카드 사진은 바다 일출 분위기를 보여 주는 참고 사진이고, 그 캠핑장에서 찍은 사진이 아니에요. 서해안 캠핑장에서는 바다 위로 뜨는 해를 보기 어려울 수 있어요.</p>
   <div class="cards">
     <article class="card" data-region="강원">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="해 뜨는 동해 바다와 모래사장, 소나무 숲 옆의 카라반과 텐트 그림">
-        <rect width="400" height="170" fill="#fbdcb4"/><circle cx="295" cy="66" r="24" fill="#f7a64a"/>
-        <rect y="66" width="400" height="50" fill="#5ea9cc"/><path stroke="#d7f0fa" stroke-width="3" fill="none" d="M170 82h60M270 92h70M120 102h70"/>
-        <rect y="112" width="400" height="58" fill="#f2ddb0"/>
-        <use href="#pine" x="-4" y="30" width="56" height="112"/><use href="#pine" x="44" y="50" width="46" height="92"/><use href="#pine" x="84" y="66" width="36" height="72"/>
-        <use href="#caravan" x="135" y="106" width="84" height="48"/><use href="#tent" x="245" y="112" width="66" height="44" style="color:#e8782a"/>
-      </svg></div>
+      <div class="photo"><img src="images/sunrise1.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>망상오토캠핑리조트</h3>
         <p class="place"><span aria-hidden="true">📍</span> 강원 동해시</p>
@@ -452,13 +421,7 @@
       </div>
     </article>
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="바다와 긴 백사장 앞 소나무 숲 안에 있는 텐트 그림">
-        <rect width="400" height="170" fill="#cdeaf5"/><rect y="42" width="400" height="30" fill="#5ea9cc"/>
-        <rect y="70" width="400" height="30" fill="#f7ecd0"/><rect y="98" width="400" height="72" fill="#c9b47f"/>
-        <use href="#pine" x="-6" y="34" width="60" height="120"/><use href="#pine" x="62" y="50" width="50" height="100"/><use href="#pine" x="270" y="46" width="52" height="104"/><use href="#pine" x="340" y="30" width="62" height="124"/>
-        <use href="#pine" x="118" y="62" width="38" height="76"/><use href="#pine" x="238" y="64" width="36" height="72"/>
-        <use href="#tent" x="150" y="108" width="78" height="52" style="color:#f6bd73"/>
-      </svg></div>
+      <div class="photo"><img src="images/sunrise2.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>변산반도 고사포 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 부안군</p>
@@ -469,13 +432,7 @@
       </div>
     </article>
     <article class="card" data-region="충남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="넓은 백사장과 잔잔한 바다 앞에 늘어선 텐트와 카라반 그림">
-        <rect width="400" height="170" fill="#d5eef8"/><rect y="40" width="400" height="48" fill="#7bbfdc"/>
-        <path fill="#a9dcef" d="M0 76q100-14 200-4t200-6v22H0z"/>
-        <path fill="#f7e8c4" d="M0 96q120-24 400-12v86H0z"/>
-        <use href="#tent" x="24" y="110" width="60" height="40" style="color:#e8782a"/><use href="#tent" x="102" y="110" width="60" height="40" style="color:#2f8f6a"/><use href="#tent" x="180" y="110" width="60" height="40" style="color:#f0a63c"/>
-        <use href="#caravan" x="268" y="102" width="98" height="56"/>
-      </svg></div>
+      <div class="photo"><img src="images/sunrise3.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>태안해안 학암포 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충남 태안군</p>
@@ -486,7 +443,7 @@
       </div>
     </article>
     <article class="card" data-region="부산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="바다와 크루즈가 보이는 항구 옆 텐트 그림"><use href="#art-port"/></svg></div>
+      <div class="photo"><img src="images/sunrise4.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>바다가 보이는 부산항 힐링 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 부산 동구</p>
@@ -497,7 +454,7 @@
       </div>
     </article>
     <article class="card" data-region="부산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="다리와 바다가 보이는 항구 옆 텐트 그림"><use href="#art-port"/></svg></div>
+      <div class="photo"><img src="images/sunrise5.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>영도 마리노 오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 부산 영도구</p>
@@ -508,7 +465,7 @@
       </div>
     </article>
     <article class="card" data-region="인천">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="노을 지는 바다와 모래사장 위 텐트 그림"><use href="#art-sunset"/></svg></div>
+      <div class="photo"><img src="images/sunrise6.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>장경리해변 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 인천 옹진군</p>
@@ -519,7 +476,7 @@
       </div>
     </article>
     <article class="card" data-region="인천">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="바다 옆 나무 숲 아래 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise1.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>십리포해수욕장 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 인천 옹진군</p>
@@ -530,7 +487,7 @@
       </div>
     </article>
     <article class="card" data-region="전남광주">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="완도 바닷가 숲 옆의 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise2.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>다도해해상 구계등 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전남광주 완도군</p>
@@ -541,7 +498,7 @@
       </div>
     </article>
     <article class="card" data-region="울산">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="동해 바닷가의 오토캠핑 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise3.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>강동오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 울산 북구</p>
@@ -552,7 +509,7 @@
       </div>
     </article>
     <article class="card" data-region="강원">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="솔숲과 해변 옆의 텐트와 카라반 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise4.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>연곡해변 솔향기캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 강원 강릉시</p>
@@ -563,7 +520,7 @@
       </div>
     </article>
     <article class="card" data-region="충남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="대천 바닷가 솔숲 아래 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise5.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>대천해수욕장 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충남 보령시</p>
@@ -574,7 +531,7 @@
       </div>
     </article>
     <article class="card" data-region="충남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="춘장대 바닷가 솔밭 아래 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise6.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>춘장대솔내음야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 충남 서천군</p>
@@ -585,7 +542,7 @@
       </div>
     </article>
     <article class="card" data-region="전북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="변산 바닷가의 오토캠핑 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise1.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>변산오토캠핑장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 전북 부안군</p>
@@ -596,7 +553,7 @@
       </div>
     </article>
     <article class="card" data-region="경북">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="해 뜨는 동해 바다 앞 텐트 그림"><use href="#art-sunrise"/></svg></div>
+      <div class="photo"><img src="images/sunrise2.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>영덕 고래불 국민 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경북 영덕군</p>
@@ -607,7 +564,7 @@
       </div>
     </article>
     <article class="card" data-region="경남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="남해 바닷가 숲 옆의 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise3.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>한려해상 덕신 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경남 남해군</p>
@@ -618,7 +575,7 @@
       </div>
     </article>
     <article class="card" data-region="경남">
-      <div class="photo"><svg viewBox="0 0 400 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="몽돌 해변과 바다 앞 텐트 그림"><use href="#art-beach"/></svg></div>
+      <div class="photo"><img src="images/sunrise4.jpg" alt="바다 위로 해가 뜨는 모습 (이 캠핑장에서 찍은 사진이 아니에요)" loading="lazy"></div>
       <div class="info">
         <h3>학동자동차 야영장</h3>
         <p class="place"><span aria-hidden="true">📍</span> 경남 거제시</p>
@@ -1144,6 +1101,7 @@
 <footer>
   <p><span aria-hidden="true">🔥</span> 캠핑가자 · 친구들과 함께 떠나요 <span aria-hidden="true">🔥</span></p>
   <p class="source">국립공원 야영장 정보 출처: <a href="https://reservation.knps.or.kr/contents/copyrightPolicy.do" target="_blank" rel="noopener">국립공원공단 예약시스템 (저작권 정책)</a> · 그 밖의 캠핑장 정보 출처: <a href="https://www.gocamping.or.kr/" target="_blank" rel="noopener">한국관광공사 고캠핑</a></p>
+  <p class="source">바다 칸 사진(크기 줄임): Clementina, <a href="https://commons.wikimedia.org/wiki/File:Full-orbed_sunrise_over_East_Sea_in_South_Korea.JPG" target="_blank" rel="noopener">사진 1</a> · <a href="https://commons.wikimedia.org/wiki/File:September_East_Sea_sunrise.JPG" target="_blank" rel="noopener">사진 2</a> · <a href="https://commons.wikimedia.org/wiki/File:Sunrise_over_East_Sea_with_table_and_bench.JPG" target="_blank" rel="noopener">사진 3</a> · <a href="https://commons.wikimedia.org/wiki/File:Sunrise_over_vast_sea.JPG" target="_blank" rel="noopener">사진 4</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a>) / Seongrae Kim, <a href="https://commons.wikimedia.org/wiki/File:%EC%86%8D%EC%B4%88_16%EB%85%84_%EC%9D%BC%EC%B6%9C_-_panoramio.jpg" target="_blank" rel="noopener">사진 5</a> · <a href="https://commons.wikimedia.org/wiki/File:%EC%86%8D%EC%B4%88_16%EB%85%84_%EC%9D%BC%EC%B6%9C_-_panoramio_(2).jpg" target="_blank" rel="noopener">사진 6</a> (<a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener">CC BY 3.0</a>)</p>
 </footer>
 
 <script>
